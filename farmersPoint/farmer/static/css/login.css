@@ -1,0 +1,31 @@
+.login-container {
+    height: 50%;
+    width: 40%;
+    margin: auto;
+    margin-top: 5%;
+    border: white 2px solid;
+    padding: 40px 20px;
+    background-color: rgba(54, 53, 50, 0.5);
+}
+
+.login-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+    color: white;
+}
+
+.login-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.login-container > form > div > label {
+    color: white;
+}
+
+#login {
+    background-color: rgba(54, 53, 50, 0.5);
+    border-radius: 20px;
+    font-weight: 600;
+}

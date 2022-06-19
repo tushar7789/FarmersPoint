@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="login-container">
+        {% if not_logged_in %}
+            <div class="alert alert-danger" role="alert">
+                You need to login to access services.
+            </div>
+        {% endif %}
+        <div class="login-header">
+            <h2>Login Form</h2>
+        </div>
+        {% if msg %}
+            <div class="alert alert-danger" role="alert">
+                {{msg}}
+            </div>
+        {% endif %}
+        <form action="/login" method="POST">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
+                       placeholder="abc@gmail.com" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1" 
+                       placeholder="********" required>
+            </div>
+            <div class="login-btn">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            {% if request.session.redirect_page %}
+                <input name="redirect_page" type="hidden" value="{{ request.session.redirect_page }}">
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}

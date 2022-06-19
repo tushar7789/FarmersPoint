@@ -1,0 +1,50 @@
+.about-container {
+    height: 600px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about-description, .about-table-container, .about-contact-container {
+    color: white;
+    height: 80%;
+    width: 30%;
+    border: 2px solid white;
+    padding: 0 20px;
+    background-color: rgba(54, 53, 50, 0.7);
+}
+
+.about-table-container > h2, .about-description > h2 , .about-contact-container > h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 10px 0px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid white;
+}
+
+.about-table {
+    color: white;
+}
+
+.about-description > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify
+}
+
+.about-contact-container:hover, .about-description:hover, .about-table-container:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition-duration: 500ms;
+}
+
+#aboutus {
+    background-color: rgba(54, 53, 50, 0.5);
+    border-radius: 20px;
+    font-weight: 600;
+}

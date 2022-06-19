@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CDN link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{%  static  'css/home.css'  %}">
+
+    <title>Farmers Point</title>
+</head>
+
+<body onload="isRegistered()">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid" id="navbar-modified">
+            <div id="left-block">
+                <a class="navbar-brand" href="/">
+                    <img src="{% static 'images/logo.jpg' %}" 
+                        style="height:40px; width:40px; 
+                                border: 1px solid black;
+                                border-radius: 20px;">
+                </a>
+                {% if request.session.registered %}
+                    <div class="popup">
+                        <span class="popuptext" id="myPopup">You are successfully registered.</span>
+                    </div>
+                {% endif %}
+                {% if logged_out %}
+                    <div class="popup">
+                        <span class="popuptext" id="myPopup">You are successfully logged out.</span>
+                    </div>
+                {% endif %}
+                {% if logged_in %}
+                    <div class="popup">
+                        <span class="popuptext" id="myPopup">You are successfully logged in.</span>
+                    </div>
+                {% endif %}
+                <div class="collapse navbar-collapse" id="navbarNavDropdown" class="navigation">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                        <a class="nav-link " id="home" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" id="aboutus" href="/about">About Us</a>
+                        </li>
+                        {% if not request.session.email %}
+                            <li class="nav-item">
+                            <a class="nav-link" id="signup" href="/signup">Sign Up</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" id="login" href="/login">Login</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            {% if request.session.email %}
+                <div id="right-block" onclick="initiateDropdown()">
+                    {{ request.session.name }}
+                    <img src="{% static 'images/default-logo.webp' %}" class="rounded-circle" style="width: 30px;"/>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- Banner -->
+
+    <div class="home-banner" style="background-image: url('{% static 'images/bg.jpg'%}');">
+        <span id="head-text">Farmer's Point</span> 
+    </div>
+
+    <!-- Service Text -->
+
+    <div class="service-text">
+        <h1><b>Services</b></h1>
+    </div>
+
+    <div class="service-container">
+        <div class="card card-mod" style="width: 20rem; height:33rem;">
+            <img class="card-img-top mb-2" src="{% static 'images/drone-shots.webp'%}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Drone Shots</h5>
+                <p class="card-text">
+                    We provide high quality drone shots of your farm. 
+                    This can help you in having better plans and make your 
+                    farming process a lot more efficient and refined.
+                </p>
+                <a href="#" class="btn btn-primary">Get shots >></a>
+            </div>
+        </div>
+
+        <div class="card card-mod" style="width: 20em; height:33rem;">
+            <img class="card-img-top mb-2" src="{% static 'images/realtime-monitoring.jpg'%}" 
+                 style="height: 212px;" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">RCM (Realtime Crop health Monitoring)</h5>
+                <p class="card-text">
+                    It is one of our expertise. 
+                    We perform a complete health monitor routine on farms using their realtim images.
+                    It provides a sharp overview of the farm condition.</p>
+                <a href="#" class="btn btn-primary">Initiate monitoring >></a>
+            </div>
+        </div>
+
+        <div class="card card-mod" style="width: 20rem; height:33rem;">
+            <img class="card-img-top mb-2" src="{% static 'images/compensations.jpg'%}" 
+                 style="height: 213px;" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Compensations</h5>
+                <p class="card-text">
+                    It is possible to have bad crop yields in a certain year. 
+                    We secure you against that situation as FP health reports for crops
+                    allow you to apply for compensations reserved directly by the government.</p>
+                <a href="#" class="btn btn-primary">Search compensations >></a>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="service-container">
+        <div class="card card-mod" style="width: 20rem; height:33rem;">
+            <img class="card-img-top" src="{% static 'images/home-banner.jpg'%}" 
+                 style="height: 212px; "alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">FP Crop Status</h5>
+                <p class="card-text">
+                    Regular crop status checks are important for great crop yields. 
+                    FP crop status is highly accurate and reliable.
+                    Agricultural officials can use it to estimate crop production for a particular region.   
+                </p>
+                <a href="{% url 'prediction' %}" class="btn btn-primary">Generate status >></a>
+            </div>
+        </div>
+
+        <div class="card card-mod" style="width: 20rem; height:33rem;">
+            <img class="card-img-top" src="{% static 'images/reports.png'%}"
+                 style="height: 212px; alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">FP Instant Reports</h5>
+                <p class="card-text">
+                    Reports keep facts documented and ease assesments.
+                    Therefore we provide you with FP Instant Reports for each
+                    your FP RCM checks.
+                    These are short-easliy producible reports.
+                </p>
+                <a href="#" class="btn btn-primary">Get report >></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+    
+    <script src="{% static 'scripts/home.js' %}"></script>
+</body>
+</html>

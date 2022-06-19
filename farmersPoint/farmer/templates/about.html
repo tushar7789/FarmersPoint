@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="about-container">
+        <div class="about-description">
+            <h2><b>Who Are We?</b></h2>
+            <p>
+                We are a team of ambitious engineers.
+                We build things that can bring a change in people's lives by making their tasks easier with the help of technology.
+                <br>
+                <br>
+                'FarmersPoint' is our first attempt in the same direction, this application is dedicated to "Farmers" who play a very crucial role in our country's growth. 
+                We understand the value of your hard-earned money and hence we keep the charges of all our services reasonable and budget-friendly. 
+                <br>
+                <br>      
+            </p>
+        </div>
+        <div class="about-table-container">
+            <h2><b>Team Members</b></h2>
+            <table class="table about-table">
+              <tbody>
+                <tr>
+                  <td>Tushar Jangid</td>
+                  <td>tusharjangid@gmail.com</td>
+                </tr>
+                <tr>
+                  <td>Safal Kumar</td>
+                  <td> kumarsafal169@gmail.com</td>
+                </tr>
+                <tr>
+                  <td>Shubham Kumar</td>
+                  <td>shubhamk183242@gmail.com</td>
+                </tr>
+                <tr>
+                  <td>Sachin Kumar</td>
+                  <td>sachinsingh0400@gmail.com</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        <div class="about-contact-container">
+            <h2><b>Contact Us</b></h2>
+            <p>
+                Contact us (24/7)
+                <br>
+                <br>
+                <b>Phone</b> : +91 9876543210
+                <br>
+                <br>
+                <b>Email</b> : farmerspoint.support@gmail.com
+                <br>
+                <br>
+                Your feedback makes us better. 
+                <br>
+                <br>
+                Feel free to reach us.
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                We at 'FarmersPoint' assure you for a smooth customer experience. 
+                Thank you for choosing 'FarmersPoint'. 
+            </p>
+        </div>
+    </div>
+
+{% endblock %}

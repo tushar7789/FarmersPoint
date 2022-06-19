@@ -1,0 +1,35 @@
+.signup-container {
+    height: 60%;
+    width: 40%;
+    margin: auto;
+    margin-top: 10px;
+    border: white 2px solid;
+    padding: 40px 20px;
+    background-color: rgba(54, 53, 50, 0.5);
+}
+
+.signup-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+    color: white;
+}
+
+.signup-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.signup-container > form > div > label {
+    color: white;
+}
+
+#signup {
+    background-color: rgba(54, 53, 50, 0.5);
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+#email:focus, #password1:focus, #password2:focus {
+    font-weight: bold;
+}

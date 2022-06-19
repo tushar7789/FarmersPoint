@@ -1,0 +1,175 @@
+body {
+    font-family: 'Courier New', monospace;
+}
+
+.navigation {
+    background-color: rgba(54, 53, 50, 0.5);
+    z-index: 2;
+}
+
+.home-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 50px 180px 50px;
+    width: 100%;
+    z-index: 1;
+}
+
+#head-text {
+    display: inline-block;
+    color: white;
+    font-size: 70px;
+    border: 2px solid white;
+    border-radius: 70px;
+    padding: 0px 80px;
+    margin-top: 110px;
+    cursor: pointer;
+}
+
+#head-text:hover {
+    background-color: rgba(54, 53, 50, 0.5);
+}
+
+.service-container {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 0px;
+}
+
+.service-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-image: linear-gradient(0deg, #e0dede 0%, #fff 10%, transparent 100%);
+}
+
+.card-mod:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    transition-duration: 500ms;
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+.nav-item:hover {
+    font-weight: 600;
+}
+
+#home {
+    background-color: rgba(54, 53, 50, 0.5);
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+#is-registered {
+    background-color: #57f257;
+    border: 1px solid #1a541a;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 30px;
+}
+
+
+
+/* Popup testing */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* The actual popup */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #57f257;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 500px;
+    /* margin-left: -80px; */
+  }
+  
+  
+  /* Toggle this class - hide and show the popup */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+  #navbar-modified {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #left-block {
+      display: flex;
+      flex-direction: row;
+  }
+
+  #right-block {
+      padding: 4px 8px;
+      border: 2px solid black;
+      border-radius: 25px;
+      cursor: pointer;
+      user-select: none;
+      background-color: rgba(54, 53, 50, 0.5);
+      color: white;
+  }
+
+  #right-block:hover {
+    background-color: rgba(54, 53, 50, 0.7);
+    color: white;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 55px;
+    right: 15px;
+    background-color: #f1f1f1;
+    border-radius: 30px;
+    min-width: 90px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 3;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: rgba(54, 53, 50, 0.5);}
+  
+  .show {display: block;}
