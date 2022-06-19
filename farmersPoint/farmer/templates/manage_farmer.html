@@ -9,7 +9,7 @@
     <!-- Bootstrap CDN link-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet"  href="{%  static  'css/base.css'  %}">
+    <link rel="stylesheet"  href="{%  static  'css/manage_farmers.css'  %}">
 
     <!-- importing styles -->
     {% block styles %}
@@ -34,41 +34,51 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown" class="navigation">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link " id="home" aria-current="page" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="aboutus" href="/about">About Us</a>
-                </li>
-                {% if not request.session.email %}
-                  <li class="nav-item">
-                  <a class="nav-link" id="signup" href="/signup">Sign Up</a>
-                  </li>
-                  <li class="nav-item">
-                  <a class="nav-link" id="login" href="/login">Login</a>
-                  </li>
-                {% endif %}
-                <li class="nav-item">
-                  <a class="nav-link" id="admin_login" href="/admin-login">Admin Login</a>
+                  <a class="nav-link " id="manage_farmers" aria-current="page" href="/manage-farmer">Manage Farmers</a>
                 </li>
               </ul>
             </div>
           </div>
-          {% if request.session.email %}
-            <div id="right-block" onclick="initiateDropdown()">
-              {{ request.session.name }}
-              <img src="{% static 'images/default-logo.webp' %}" class="rounded-circle" style="width: 30px;"/>
-              <div id="myDropdown" class="dropdown-content">
-                  <a href="{% url 'logout' %}">Logout</a>
-              </div>
-            </div>
-          {% endif %}
         </div>
       </nav>
-      {% block content %}
 
-      {% endblock %}
+    <div class="about-table-container">
+        <h2><b>All Farmers</b></h2>
+        <table class="table about-table">
+            <thead>
+                <tr id="table-head">
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for userDetail in userDetails %}
+                <tr>
+                    <td>{{userDetail.name}}</td>
+                    <td>{{userDetail.email}}</td>
+                    <td>
+                        <form action="/manage-farmer" method="POST">
+                            {% csrf_token %}
+                            <input type="text" name="action" value="delete" hidden>
+                            <input type="text" name="mail" value="{{ userDetail.email }}" hidden>
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div id="add-btn">
+        <form action="/manage-farmer" method="POST">
+            {% csrf_token %}
+            <input type="text" name="action" value="add" hidden>
+            <button type="submit" class="btn btn-success">Add Farmer</button>
+        </form>
+    </div>
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-      <script src="{% static 'scripts/base.js' %}"></script>
 </body>
 </html>

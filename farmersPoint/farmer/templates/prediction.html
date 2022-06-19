@@ -8,7 +8,6 @@
 {% block content %}
 <div id="prediction-header"><b>Crop Status</b></div>
 <div class="prediction-container">
-    <!-- <button onclick="">Predict</button> -->
     <div id="original">
         <h2>Original</h2>
         <img src="https://1016-34-86-52-121.ngrok.io/original/{{ request.session.email }}" style="height:400px; width:400px" alt="">
@@ -45,12 +44,6 @@
                 </tr>
             </table>
         </div>
-        <!-- <div id="output-btn">
-            <form action="{% url 'prediction_with_id' f_mail=request.session.email %}" method="post">
-                {% csrf_token %}
-                <button type="submit">Predict</button>
-            </form>
-        </div> -->
     </div>
 </div>
 {% endblock %}

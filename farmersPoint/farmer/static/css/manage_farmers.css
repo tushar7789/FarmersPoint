@@ -1,0 +1,183 @@
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+}
+
+.navigation {
+    background-color: rgba(54, 53, 50, 0.5);
+    z-index: -1;
+}
+
+.nav-item:hover {
+    font-weight: 600;
+}
+
+#logo {
+    border-radius: 50%;
+}
+
+#navbar-modified {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #left-block {
+      display: flex;
+      flex-direction: row;
+  }
+
+  #right-block {
+    padding: 4px 8px;
+    border: 2px solid black;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: rgba(54, 53, 50, 0.5);
+    color: white;
+}
+
+#right-block:hover {
+  background-color: rgba(54, 53, 50, 0.7);
+  color: white;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 55px;
+    right: 15px;
+    background-color: #f1f1f1;
+    border-radius: 30px;
+    min-width: 90px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 3;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+}
+
+.navigation {
+    background-color: rgba(54, 53, 50, 0.5);
+    z-index: -1;
+}
+
+.nav-item:hover {
+    font-weight: 600;
+}
+
+#logo {
+    border-radius: 50%;
+}
+
+#navbar-modified {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #left-block {
+      display: flex;
+      flex-direction: row;
+  }
+
+  #right-block {
+    padding: 4px 8px;
+    border: 2px solid black;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: rgba(54, 53, 50, 0.5);
+    color: white;
+}
+
+#right-block:hover {
+  background-color: rgba(54, 53, 50, 0.7);
+  color: white;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 55px;
+    right: 15px;
+    background-color: #f1f1f1;
+    border-radius: 30px;
+    min-width: 90px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 3;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: rgba(54, 53, 50, 0.5);}
+  
+  .show {display: block;}
+
+  #manage_farmers {
+    background-color: rgba(54, 53, 50, 0.5);
+    border-radius: 20px;
+    font-weight: 600;
+  }
+  .dropdown a:hover {background-color: rgba(54, 53, 50, 0.5);}
+  
+  .show {display: block;}
+
+.about-table-container{
+  margin: auto;
+  margin-top: 20px;
+  color: white;
+  height: 480px;
+  width: 80%;
+  border: 2px solid white;
+  padding: 0 20px;
+  background-color: rgba(54, 53, 50, 0.7);
+  overflow: scroll;
+}
+
+.about-table {
+  color: white;
+}
+
+.about-table-container > h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 10px 0px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid white;
+}
+
+#table-head {
+  font-size: 25px;
+  font-weight: 900;
+}
+
+#add-btn {
+  display: flex;
+  justify-content: right;
+  margin: 10px auto;
+  color: white;
+  height: 50px;
+  width: 80%;
+}
+
+#add-btn > form > button {
+  margin-right: 60px;
+}
